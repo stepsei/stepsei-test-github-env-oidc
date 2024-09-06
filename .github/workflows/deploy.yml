@@ -55,14 +55,14 @@ jobs:
         id: plan-dev
         run: terraform plan -var-file="dev.tfvars" 
         working-directory: ./terraform-resources
-      # - name: Terraform Apply Workspace Dev
-      #   id: apply-dev
-      #   run: terraform apply -var-file="dev.tfvars" -auto-approve
-      #   working-directory: ./terraform-resources
-      - name: Terraform Destroy Workspace Dev
-        id: destroy-dev
-        run: terraform destroy -var-file="dev.tfvars" -auto-approve
+      - name: Terraform Apply Workspace Dev
+        id: apply-dev
+        run: terraform apply -var-file="dev.tfvars" -auto-approve
         working-directory: ./terraform-resources
+      # - name: Terraform Destroy Workspace Dev
+      #   id: destroy-dev
+      #   run: terraform destroy -var-file="dev.tfvars" -auto-approve
+      #   working-directory: ./terraform-resources
 
   
   STAGE: 
@@ -99,14 +99,14 @@ jobs:
         id: plan-stage
         run: terraform plan -var-file="stage.tfvars"
         working-directory: ./terraform-resources
-      # - name: Terraform Apply Workspace Stage
-      #   id: apply-stage
-      #   run: terraform apply -var-file="stage.tfvars" -auto-approve
-      #   working-directory: ./terraform-resources
-      - name: Terraform Destroy Workspace Stage
-        id: destroy-stage
-        run: terraform destroy -var-file="stage.tfvars" -auto-approve
+      - name: Terraform Apply Workspace Stage
+        id: apply-stage
+        run: terraform apply -var-file="stage.tfvars" -auto-approve
         working-directory: ./terraform-resources
+      # - name: Terraform Destroy Workspace Stage
+      #   id: destroy-stage
+      #   run: terraform destroy -var-file="stage.tfvars" -auto-approve
+      #   working-directory: ./terraform-resources
 
   PROD: 
     # The type of runner that the job will run on
@@ -142,12 +142,12 @@ jobs:
         id: plan-stage
         run: terraform plan -var-file="prod.tfvars"
         working-directory: ./terraform-resources
-      # - name: Terraform Apply Workspace Prod
-      #   id: apply-prod
-      #   run: terraform apply -var-file="prod.tfvars" -auto-approve
-      #   working-directory: ./terraform-resources
-      - name: Terraform Destroy Workspace Prod
-        id: destroy-prod
-        run: terraform destroy -var-file="prod.tfvars" -auto-approve
+      - name: Terraform Apply Workspace Prod
+        id: apply-prod
+        run: terraform apply -var-file="prod.tfvars" -auto-approve
         working-directory: ./terraform-resources
+      # - name: Terraform Destroy Workspace Prod
+      #   id: destroy-prod
+      #   run: terraform destroy -var-file="prod.tfvars" -auto-approve
+      #   working-directory: ./terraform-resources
 
